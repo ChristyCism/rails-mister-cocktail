@@ -1,0 +1,16 @@
+<div class="container">
+<h1>Add a dose</h1>
+
+  <%= simple_form_for [@cocktail, @dose] do |f| %>
+
+    <%= f.error_notification %>
+    <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+    <%= f.input :description %>
+    <%= f.input :ingredient_id, collection: @ingredients %>
+    <%= f.submit "Add", class: "btn btn-primary" %>
+
+
+</div>
+
+<% end %>
